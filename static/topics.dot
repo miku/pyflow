@@ -1,0 +1,54 @@
+digraph t {
+    node [shape="box"];
+
+    "pyflow" [label="Python Flow"];
+
+    "pyflow" -> "performance";
+    "pyflow" -> "safe";
+    "pyflow" -> "idiomatic";
+    "pyflow" -> "lifecycle";
+
+    "idiomatic" -> "data model";
+    "idiomatic" -> "context manager";
+    "idiomatic" -> "generators";
+    "idiomatic" -> "decorators";
+    "idiomatic" -> "iterators";
+    "idiomatic" -> "metaclasses";
+
+    "performance" -> "slowness";
+    "performance" -> "benchmark tools";
+    "performance" -> "basic tricks";
+    "performance" -> "GIL";
+    "performance" -> "multithreading";
+    "performance" -> "multiprocessing";
+    "performance" -> "async programming";
+    "performance" -> "array programming";
+    "performance" -> "numpy basics";
+    "performance" -> "dataframe evolution";
+    "performance" -> "cython";
+    "performance" -> "anatomy of a C extension";
+    "performance" -> "anatomy of a Rust extension";
+
+    "safe" -> "defensive programming";
+    "safe" -> "type hints";
+    "safe" -> "type checkers overview";
+    "safe" -> "everyday use of gradual typing";
+    "safe" -> "typing and legacy code";
+
+    "lifecycle" -> "minimal packaging";
+    "lifecycle" -> "PEP-441";
+    "lifecycle" -> "pyinstaller";
+    "lifecycle" -> "containerized python";
+    "lifecycle" -> "cookiecutter templates";
+    "lifecycle" -> "data-intensive applications";
+
+    // performance
+    "slowness" -> "what happens at attribute lookup time";
+    "slowness" -> "how long do operations take in python";
+
+    "benchmark tools" -> "time";
+    "benchmark tools" -> "timeit";
+    "benchmark tools" -> "cprofile";
+    "benchmark tools" -> "memray";
+
+}

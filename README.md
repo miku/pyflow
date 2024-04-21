@@ -4,6 +4,14 @@
 
 Focus areas:
 
+* [Performance](Performance.md)
+* [Safety](Safe.md)
+* [Idiomatic](Idiomatic.md)
+* [Lifecycle](Lifecycle.md)
+
+
+----
+
 * [ ] performance
     * [ ] why python is slow
     * [ ] basic tricks
