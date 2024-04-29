@@ -17,7 +17,7 @@ Both functions and class can be passed around. A class can be a callable.
 Sometime, the "factory" shrinks to a parameter with some sensible default, e.g.
 like in [json.loads](https://docs.python.org/3/library/json.html#json.loads).
 
-```
+```python
 import json
 from decimal import Decimal
 
@@ -26,6 +26,13 @@ def build_decimal(string):
 
 print(json.loads(text, parse_float=build_decimal))
 ```
+
+* other example: `SetEncoder`, [json_set_encoder.py](json_set_encoder.py)
+
+Improvement over `json_decimal.py` by removing the extra function and use the `Decimal` class as a callable.
+
+
+
 
 ## Builder
 
