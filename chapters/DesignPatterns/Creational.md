@@ -77,13 +77,16 @@ Related SO:
 [https://stackoverflow.com/questions/11977279/builder-pattern-equivalent-in-python](https://stackoverflow.com/questions/11977279/builder-pattern-equivalent-in-python),
 it says, simply: "Builder pattern not needed"
 
-
-
+There is a possible, but less common use case to let a mutable builder object build an immutable object.
 
 
 ## Factory Method
 
-Definition:
+Definition: The factory method pattern is a creational pattern that uses
+factory methods to deal with the problem of creating objects without having to
+specify their exact class.
+
+Paraphrased:
 
 ## Prototype
 
