@@ -82,6 +82,11 @@ Focus areas:
     * type checkers overview
     * everyday use of gradual typing
     * working with legacy code and type hints
+* testing code with pytest
+    * overview
+    * fixtures
+    * parameterized tests
+    * marking tests
 * development and deployment
     * general ideas
         * semantic versioning
@@ -116,4 +121,3 @@ Focus areas:
     * dataframe evolution
     * cython
     * writing a c module
-    * writing a rust module
