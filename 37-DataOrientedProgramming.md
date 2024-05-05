@@ -1,5 +1,96 @@
 # Data Oriented Programming
 
+Various topics around working with data.
+
+# Modeling Records
+
+* tuple, namedtuple
+
+# Data Classes
+
+* added in 3.7
+
+>  Although they use a very different mechanism, Data Classes can be thought of as “mutable namedtuples with defaults”. -- [https://peps.python.org/pep-0557/](https://peps.python.org/pep-0557/)
+
+* uses a decorator
+* uses annotations
+
+> there’s really nothing special about the class: the decorator adds generated methods to the class and returns the same class it was given.
+
+Given a class:
+
+```python
+@dataclass
+class InventoryItem:
+    '''Class for keeping track of an item in inventory.'''
+    name: str
+    unit_price: float
+    quantity_on_hand: int = 0
+
+    def total_cost(self) -> float:
+        return self.unit_price * self.quantity_on_hand
+```
+
+The decorator will expand this definition into the following (8 special methods):
+
+```python
+def __init__(self, name: str, unit_price: float, quantity_on_hand: int = 0) -> None:
+    self.name = name
+    self.unit_price = unit_price
+    self.quantity_on_hand = quantity_on_hand
+def __repr__(self):
+    return f'InventoryItem(name={self.name!r}, unit_price={self.unit_price!r}, quantity_on_hand={self.quantity_on_hand!r})'
+def __eq__(self, other):
+    if other.__class__ is self.__class__:
+        return (self.name, self.unit_price, self.quantity_on_hand) == (other.name, other.unit_price, other.quantity_on_hand)
+    return NotImplemented
+def __ne__(self, other):
+    if other.__class__ is self.__class__:
+        return (self.name, self.unit_price, self.quantity_on_hand) != (other.name, other.unit_price, other.quantity_on_hand)
+    return NotImplemented
+def __lt__(self, other):
+    if other.__class__ is self.__class__:
+        return (self.name, self.unit_price, self.quantity_on_hand) < (other.name, other.unit_price, other.quantity_on_hand)
+    return NotImplemented
+def __le__(self, other):
+    if other.__class__ is self.__class__:
+        return (self.name, self.unit_price, self.quantity_on_hand) <= (other.name, other.unit_price, other.quantity_on_hand)
+    return NotImplemented
+def __gt__(self, other):
+    if other.__class__ is self.__class__:
+        return (self.name, self.unit_price, self.quantity_on_hand) > (other.name, other.unit_price, other.quantity_on_hand)
+    return NotImplemented
+def __ge__(self, other):
+    if other.__class__ is self.__class__:
+        return (self.name, self.unit_price, self.quantity_on_hand) >= (other.name, other.unit_price, other.quantity_on_hand)
+    return NotImplemented
+```
+
+
+There are a couple of inspirations, where dataclass originates from:
+
+
+* collections.namedtuple in the standard library (2.6+)
+* typing.NamedTuple in the standard library.
+* The popular attrs [1] project.
+* George Sakkis’ [recordType recipe](https://code.activestate.com/recipes/576555-records/), a mutable data type inspired by collections.namedtuple.
+* Many example online recipes [3], packages [4], and questions [5]. David Beazley used a form of data classes as the motivating example in a PyCon 2013 metaclass talk [6].
+
+
+# The attrs project
+
+* inspiration for dataclasses
+* not standard library, but more powerful
+
+Some differences to dataclasses:
+
+* has validators, equality customizations, extensibility
+* attrs doesn’t force type annotations on you if you don’t like them.
+
+Tradeoff: standard library (moving slow, always available) vs third-party project (moving fast, another dependency)
+
+
+
 
 # Data Validation with Pydantic
 
