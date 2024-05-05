@@ -22,3 +22,7 @@ Shared memory:
 Alternatively, more complete data structures through a manager:
 
 > Managers provide a way to create data which can be shared between different processes, including sharing over a network between processes running on different machines. A manager object controls a server process which manages shared objects. Other processes can access the shared objects by using proxies.
+
+## Examples
+
+* [Snippets/Multiprocessing](Snippets/Multiprocessing/)

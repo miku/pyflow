@@ -18,3 +18,7 @@ Store expensive computation on disk.
 ## Parallel generator
 
 > The core idea is to write the code to be executed as a generator expression, and convert it to parallel computing
+
+## Notebook
+
+* [notebooks/Joblib.ipynb](notebooks/Joblib.ipynb)
