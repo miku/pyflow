@@ -89,6 +89,10 @@ Parameters of the `dataclass` decorator.
 
 * "match_args" corresponds to the `match` statement (3.10)
 
+More examples:
+
+* [Snippets/Dataclass]
+
 
 # The attrs project
 
