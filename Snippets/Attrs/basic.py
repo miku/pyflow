@@ -12,3 +12,16 @@ class SomeClass:
 
 sc = SomeClass(1, [1, 2, 3])
 print(sc)
+
+print(sc.hard_math(3))
+
+print(sc == SomeClass(1, [1, 2, 3]))
+print(sc != SomeClass(2, [3, 2, 1])) # True
+
+print(asdict(sc))
+
+print(SomeClass()) # default
+
+
+C = make_class("C", ["a", "b"]) # minimal class
+print(C)

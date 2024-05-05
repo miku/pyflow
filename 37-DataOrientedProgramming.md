@@ -9,11 +9,15 @@ Various topics around working with data.
 # Data Classes
 
 * added in 3.7
+* some voices claim, that every class can start as a dataclass - [data-classification](https://blog.glyph.im/2023/02/data-classification.html)
 
 >  Although they use a very different mechanism, Data Classes can be thought of as “mutable namedtuples with defaults”. -- [https://peps.python.org/pep-0557/](https://peps.python.org/pep-0557/)
 
 * uses a decorator
 * uses annotations
+* allows to set defaults
+* avoids boilerplate
+
 
 > there’s really nothing special about the class: the decorator adds generated methods to the class and returns the same class it was given.
 
@@ -77,6 +81,15 @@ There are a couple of inspirations, where dataclass originates from:
 * Many example online recipes [3], packages [4], and questions [5]. David Beazley used a form of data classes as the motivating example in a PyCon 2013 metaclass talk [6].
 
 
+Parameters of the `dataclass` decorator.
+
+```
+@dataclasses.dataclass(*, init=True, repr=True, eq=True, order=False, unsafe_hash=False, frozen=False, match_args=True, kw_only=False, slots=False, weakref_slot=False)
+```
+
+* "match_args" corresponds to the `match` statement (3.10)
+
+
 # The attrs project
 
 * inspiration for dataclasses
@@ -89,8 +102,23 @@ Some differences to dataclasses:
 
 Tradeoff: standard library (moving slow, always available) vs third-party project (moving fast, another dependency)
 
+The attrs project provides:
 
+* a concise and explicit overview of the class’s attributes,
+* a nice human-readable __repr__,
+* equality-checking methods,
+* an initializer,
+* and much more,
 
+without writing dull boilerplate code again and again and without runtime performance penalties.
+
+Hate type annotations!? No problem! Types are entirely optional with attrs. Simply assign attrs.field() to the attributes instead of annotating them with types.
+
+Lightweight helper:
+
+> You define a class and attrs adds static methods to that class based on the attributes you declare. The end. It doesn’t add metaclasses. It doesn’t add classes you’ve never heard of to your inheritance tree. An attrs class in runtime is indistinguishable from a regular class: because it is a regular class with a few boilerplate-y methods attached.
+
+If in doubt, the standard library dataclass may be enough.
 
 # Data Validation with Pydantic
 
@@ -108,3 +136,4 @@ Models support a variety of extra methods, e.g. for exporting like `json`,
 `dict` or JSON schema. Validation can be circumvented with `construct`.
 
 Examples: [Snippets/Pydantic](Snippets/Pydantic)
+
