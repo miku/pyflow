@@ -56,7 +56,7 @@ class Gen:
 gen = Gen()
 for i in gen:
     print(i)
-``` 
+```
 
 Finally, the `yield` keyword allows to write a generator without a class.
 
@@ -119,13 +119,17 @@ Advantages:
 * memory efficient
 * pythonic (other languages do need more workarounds)
 
+## Generators and itertools
+
+* generators and itertools go great together
+* [Snippets/Itertools](Snippets/Itertools)
 
 
 ## Task
 
 Write a generator that mimics the builtin range without using `range`.
 
-* use a class based approach and 
+* use a class based approach and
 * a generator function approach
 
 Example usage would be like:
@@ -140,3 +144,4 @@ for i in Range(0, 10, 2):
 # 6
 # 8
 ```
+
