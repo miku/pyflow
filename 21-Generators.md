@@ -104,8 +104,11 @@ Example image processing pipeline:
 
 ```python
 imgs = (imageio.imread(f) for f in filenames)
-imgs = (resize_image(img, width=width) for img in imgs)
-imgs = (pad_image(img, border=border, bordercolor=bordercolor) for img in imgs)
+resized_imgs = (resize_image(img, width=width) for img in imgs)
+padded_imgs = (pad_image(img, border=border, bordercolor=bordercolor) for img in resized)
+
+for i in padded_imgs:
+    # do something ...
 ```
 
 After these three lines, nothing will happen because generators are lazy and
