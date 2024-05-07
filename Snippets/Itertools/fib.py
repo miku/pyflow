@@ -1,5 +1,6 @@
 
 import itertools
+import collections
 
 def fib():
     a, b = 1, 0
@@ -15,6 +16,3 @@ def tail(n, iterable):
     "Return an iterator over the last n items."
     # tail(3, 'ABCDEFG') → E F G
     return iter(collections.deque(iterable, maxlen=n))
-
-ratio = itertools.takewhile(lambda x, y: x / y > 0, itertools.pairwise(fib()))
-print(list(ratio))

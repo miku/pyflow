@@ -1,7 +1,10 @@
 
 from itertools import islice
 
-def madhava_leibniz() -> float:
+# Generator[YieldType, SendType, ReturnType]
+# If your generator will only yield values, set the SendType and ReturnType to None:
+
+def madhava_leibniz():
     a, sign = 1, 1
     while True:
         yield sign * (1 / a)
