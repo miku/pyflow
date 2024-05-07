@@ -2,6 +2,9 @@
 
 The collections module offers a variety of utility types.
 
+* [notebooks/Collections.ipynb](notebooks/Collections.ipynb)
+* [notebooks/CollectionsABC.ipynb](notebooks/CollectionsABC.ipynb)
+
 ## Default dictionary
 
 The standard library has many special purpose utilities.
