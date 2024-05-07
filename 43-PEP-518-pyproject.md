@@ -21,6 +21,15 @@ Since [PEP-518](https://peps.python.org/pep-0518/) and other [packaging
 PEPs](https://peps.python.org/topic/packaging/) we are seeing a new landscape of
 projects.
 
+
+## Virtual envs
+
+```
+$ alias mkvenv
+alias mkvenv='python -m venv .venv && source .venv/bin/activate' # then deactivate
+```
+
+
 ## Just a few tools from the packaging universe
 
 * pyenv (NA)
