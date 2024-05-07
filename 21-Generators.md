@@ -105,7 +105,7 @@ Example image processing pipeline:
 ```python
 imgs = (imageio.imread(f) for f in filenames)
 resized_imgs = (resize_image(img, width=width) for img in imgs)
-padded_imgs = (pad_image(img, border=border, bordercolor=bordercolor) for img in resized)
+padded_imgs = (pad_image(img, border=border, bordercolor=bordercolor) for img in resized_imgs)
 
 for i in padded_imgs:
     # do something ...
